@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:proyect_chordnotes/themes/color_scheme/color_scheme_dark.dart';
-import 'package:proyect_chordnotes/themes/color_scheme/color_scheme_light.dart';
-import 'package:proyect_chordnotes/themes/text_scheme/global_text_theme.dart';
+import 'package:proyect_chordnotes/ui/themes/color_scheme/color_scheme_dark.dart';
+import 'package:proyect_chordnotes/ui/themes/color_scheme/color_scheme_light.dart';
+import 'package:proyect_chordnotes/ui/themes/text_scheme/global_text_theme.dart';
 
 class GlobalThemData {
   static final Color _lightFocusColor = Colors.black.withOpacity(0.12);

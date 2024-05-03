@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyect_chordnotes/themes/color_scheme/color_scheme_light.dart';
-import 'package:proyect_chordnotes/themes/theme_data/global_theme_data.dart';
+import 'package:proyect_chordnotes/ui/themes/color_scheme/color_scheme_light.dart';
+import 'package:proyect_chordnotes/ui/themes/theme_data/global_theme_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       theme: GlobalThemData.lightThemeData,
       darkTheme: GlobalThemData.darkThemeData,
       debugShowCheckedModeBanner: false,
@@ -52,13 +52,30 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          backgroundColor: Theme.of(context).colorScheme.background,
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: Text(widget.title),
+          title: Text(
+            widget.title,
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
+          centerTitle: true,
+
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.add),
+              onPressed: _incrementCounter,
+            ),
+          ],
+          leading: IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {},
+          ),
+          shadowColor: Colors.black,
         ),
         body: SingleChildScrollView(
-          child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 50),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

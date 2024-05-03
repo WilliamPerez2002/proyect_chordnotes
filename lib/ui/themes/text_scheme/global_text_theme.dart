@@ -1,9 +1,8 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:proyect_chordnotes/themes/color_scheme/color_scheme_light.dart';
 
 const onDark = Colors.white;
-const onLight = background;
+const onLight = Color(0xFF031C30);
 
 TextTheme lightGlobalText = TextTheme(
   bodyLarge: GoogleFonts.lato(
