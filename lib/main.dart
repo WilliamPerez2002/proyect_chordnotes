@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyect_chordnotes/themes/color_scheme/color_scheme_light.dart';
-import 'package:proyect_chordnotes/themes/theme_data/asa.dart';
+import 'package:proyect_chordnotes/themes/theme_data/global_theme_data.dart';
 
 void main() {
   runApp(const MyApp());
