@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyect_chordnotes/ui/themes/color_scheme/color_scheme_light.dart';
 import 'package:proyect_chordnotes/ui/themes/theme_data/global_theme_data.dart';
+import 'package:proyect_chordnotes/ui/widgets/sidebar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,13 +54,16 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.background,
+
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
           title: Text(
             widget.title,
-            style: Theme.of(context).textTheme.displaySmall,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
           centerTitle: true,
+          iconTheme:
+              IconThemeData(color: Theme.of(context).colorScheme.onBackground),
 
           actions: [
             IconButton(
@@ -67,12 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: _incrementCounter,
             ),
           ],
-          leading: IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {},
-          ),
-          shadowColor: Colors.black,
+
+          shadowColor: Theme.of(context).colorScheme.primary,
         ),
+        drawer: GlobalSidebar(),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 50),
