@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:proyect_chordnotes/ui/themes/color_scheme/color_scheme_light.dart';
 import 'package:proyect_chordnotes/ui/themes/theme_data/global_theme_data.dart';
 import 'package:proyect_chordnotes/ui/widgets/sidebar.dart';
