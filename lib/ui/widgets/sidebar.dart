@@ -1,12 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:get/get.dart';
 
 class GlobalSidebar extends StatefulWidget {
+  final int selectedIndex;
   const GlobalSidebar({
     super.key,
+    required this.selectedIndex,
   });
 
   @override
@@ -14,6 +14,7 @@ class GlobalSidebar extends StatefulWidget {
 }
 
 class _GlobalSidebarState extends State<GlobalSidebar> {
+  get selectIndex => widget.selectedIndex;
   @override
   Widget build(BuildContext context) {
     return Animate(
@@ -62,13 +63,17 @@ class _GlobalSidebarState extends State<GlobalSidebar> {
                         color: Theme.of(context).colorScheme.surface)),
               ),
             ),
-            const RowSidebar(
+            RowSidebar(
               title: "Home",
               icon: Icons.home_outlined,
+              isSelected: selectIndex == 0 ? true : false,
+              onTap: () => Get.offNamed("/"),
             ),
-            const RowSidebar(
+            RowSidebar(
               title: "Notes",
               icon: Icons.sticky_note_2_outlined,
+              isSelected: selectIndex == 1 ? true : false,
+              onTap: () => Get.offNamed("/notes"),
             ),
             const SizedBox(
               height: 90,
@@ -82,13 +87,17 @@ class _GlobalSidebarState extends State<GlobalSidebar> {
                         color: Theme.of(context).colorScheme.surface)),
               ),
             ),
-            const RowSidebar(
+            RowSidebar(
               title: "Profile",
               icon: Icons.person_outline,
+              isSelected: selectIndex == 2 ? true : false,
+              onTap: () => Get.offNamed("/profile"),
             ),
-            const RowSidebar(
+            RowSidebar(
               title: "Settings",
               icon: Icons.settings_outlined,
+              isSelected: selectIndex == 3 ? true : false,
+              onTap: () => Get.toNamed("/settings"),
             ),
             const SizedBox(
               height: 20,
@@ -101,9 +110,11 @@ class _GlobalSidebarState extends State<GlobalSidebar> {
             const SizedBox(
               height: 1,
             ),
-            const RowSidebar(
+            RowSidebar(
               title: "Logout",
               icon: Icons.logout,
+              onTap: () => Get.offNamed("/login"),
+              isSelected: false,
             ),
             const SizedBox(
               height: 20,
@@ -118,18 +129,31 @@ class _GlobalSidebarState extends State<GlobalSidebar> {
 class RowSidebar extends StatelessWidget {
   final String title;
   final IconData icon;
+  final bool isSelected;
+  final Function()? onTap;
 
   const RowSidebar({
     super.key,
     required this.title,
     required this.icon,
+    required this.onTap,
+    required this.isSelected,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(title, style: Theme.of(context).textTheme.bodyLarge),
-      onTap: () {},
+      selected: isSelected,
+      //selectedTileColor: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+      // shape: RoundedRectangleBorder(
+      // borderRadius: BorderRadius.circular(20),
+      //),
+      title: Text(title,
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              color: isSelected
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.onBackground)),
+      onTap: onTap,
       leading: Icon(icon),
       iconColor: Theme.of(context).colorScheme.onBackground,
     );

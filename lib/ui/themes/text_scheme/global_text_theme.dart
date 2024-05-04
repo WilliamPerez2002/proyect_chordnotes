@@ -65,18 +65,18 @@ TextTheme lightGlobalText = TextTheme(
     fontWeight: FontWeight.w400,
     color: onLight,
   ),
-  titleLarge: GoogleFonts.lato(
+  titleLarge: GoogleFonts.robotoSlab(
+    fontSize: 25,
+    fontWeight: FontWeight.w700,
+    color: onLight,
+  ),
+  titleMedium: GoogleFonts.robotoSlab(
     fontSize: 20,
     fontWeight: FontWeight.w700,
     color: onLight,
   ),
-  titleMedium: GoogleFonts.lato(
-    fontSize: 16,
-    fontWeight: FontWeight.w700,
-    color: onLight,
-  ),
-  titleSmall: GoogleFonts.lato(
-    fontSize: 14,
+  titleSmall: GoogleFonts.robotoSlab(
+    fontSize: 17,
     fontWeight: FontWeight.w700,
     color: onLight,
   ),
@@ -143,18 +143,18 @@ TextTheme darkGlobalText = TextTheme(
     fontWeight: FontWeight.w400,
     color: onDark,
   ),
-  titleLarge: GoogleFonts.lato(
+  titleLarge: GoogleFonts.robotoSlab(
+    fontSize: 25,
+    fontWeight: FontWeight.w700,
+    color: onDark,
+  ),
+  titleMedium: GoogleFonts.robotoSlab(
     fontSize: 20,
     fontWeight: FontWeight.w700,
     color: onDark,
   ),
-  titleMedium: GoogleFonts.lato(
-    fontSize: 16,
-    fontWeight: FontWeight.w700,
-    color: onDark,
-  ),
-  titleSmall: GoogleFonts.lato(
-    fontSize: 14,
+  titleSmall: GoogleFonts.robotoSlab(
+    fontSize: 17,
     fontWeight: FontWeight.w700,
     color: onDark,
   ),
